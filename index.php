@@ -97,8 +97,7 @@ $show_complete_tasks = rand(0, 1);
                         <tr class="tasks__item task task--completed">
                             <td class="task__select">
                                 <label class="checkbox task__checkbox">
-                                    <input class="checkbox__input visually-hidden" type="checkbox"
-                                        checked><?=($show_complete_tasks) ? 'checked' : ''; ?>
+                                    <input class="checkbox__input visually-hidden" type="checkbox">
                                     <span class="checkbox__text">Записаться на интенсив "Базовый PHP"</span>
                                 </label>
                             </td>
