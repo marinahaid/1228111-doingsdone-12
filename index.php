@@ -111,7 +111,6 @@ $show_complete_tasks = rand(0, 1);
             </div>
         </div>
     </div>
-
     <footer class="main-footer">
         <div class="container">
             <div class="main-footer__copyright">
