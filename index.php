@@ -161,7 +161,7 @@ $tasks = [
                         <?php endif ?>
                         <?php endforeach; ?>
                         <!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
-                        <?php if (!$show_complete_tasks): ?>
+                        <?php if ($show_complete_tasks): ?>
                         <tr class="tasks__item task <?= ($task['is_complete'] && $show_complete_tasks) ?>task--completed">
                             <td class="task__select">
                                 <label class="checkbox task__checkbox">
