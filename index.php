@@ -98,17 +98,18 @@ $tasks = [
 
                     <nav class="main-navigation">
                         <ul class="main-navigation__list">
-                            <?php
-                            foreach ($categories as $category) : ?>
-
+                            <?php foreach ($categories as $category) : ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?= $category ?></a>
-                                <span class="main-navigation__list-item-count">0</span>
+                                <?php foreach ($tasks as $task): ?>
+                                <?php  if ($task['category'] === $category): ?>
+                                <span class="main-navigation__list-item-count"><?= count($task) ?></span>
+                                <?php endif ?>
+                                <?php endforeach; ?>
                             </li>
                             <?php endforeach; ?>
                         </ul>
                     </nav>
-
                     <a class="button button--transparent button--plus content__side-button"
                         href="pages/form-project.html" target="project_add">Добавить проект</a>
                 </section>
@@ -156,7 +157,7 @@ $tasks = [
                             </td>
                             <td class="task__date"><?= $task['date'] ?></td>
                         </tr>
-                     <!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
+                        <!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
                         <?php elseif ($task['is_complete'] && !$show_complete_tasks): ?>
                         <tr class="tasks__item task task--completed">
                             <td class="task__select">
