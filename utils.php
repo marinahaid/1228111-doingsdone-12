@@ -1,15 +1,13 @@
-
-
 <?php
-function count_task_categories($category__name, $tasks)
+function count_task_categories($category_name, $tasks)
 {
     $count = 0;
+  
     foreach ($tasks as $task) {
-        if ($task['category'] === $category__name) {
+      if ($task['category'] === $category_name) {
             $count++;
         }
-    }
-    return $count;
 }
-
-echo count_task_categories('Работа', $tasks);
+    return $count;
+   
+}
