@@ -1,6 +1,5 @@
 <?php
 require_once('utils.php');
-// показывать или нет выполненные задачи
 $show_complete_tasks = rand(0, 1);
 ?>
 
@@ -56,5 +55,36 @@ $tasks = [
         'is_complete' => false
     ]
 ];
-?>
 
+$config = [
+	'sitename' => 'Дела в порядке',
+	'tpl_path' => 'tpl/',
+	// сайт доступен и работает
+	'enable' => true
+];
+
+function include_template($name, array $data = []) {
+    $name = 'templates/' . $name;
+    $result = '';
+
+    if (!is_readable($name)) {
+        return $result;
+    }
+
+    ob_start();
+    extract($data);
+    require $name;
+
+    $result = ob_get_clean();
+
+    return $result;
+}
+
+$content_main = include_template('main.php', [
+    'categories' => $categories,
+     'tasks' => $tasks]);
+
+  $layout = include_template('layout.php', [
+    'content' => $content_main]);
+    echo $layout;
+?>

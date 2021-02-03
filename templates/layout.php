@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title><?= $title; ?></title>
+    <title><?=$config['sitename'];?></title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </header>
-      
-           <div class="content"><?= $content; ?></div>
+
+            <div class="content"><?= $content ?></div>
         </div>
     </div>
     <footer class="main-footer">
