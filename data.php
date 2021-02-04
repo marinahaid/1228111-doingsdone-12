@@ -1,6 +1,4 @@
-<?php require_once('utils.php');
-$show_complete_tasks = rand(0, 1);
-
+<?php 
 $categories = [
     'inbox' => 'Входящие',
     'study' => 'Учеба',

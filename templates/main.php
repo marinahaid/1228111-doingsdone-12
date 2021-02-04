@@ -2,10 +2,11 @@
     <h2 class="content__side-heading">Проекты</h2>
     <nav class="main-navigation">
         <ul class="main-navigation__list">
-            <?php foreach ($categories as $category): ?>
+            <?php foreach ($categories as $category) : ?>
             <li class="main-navigation__list-item">
                 <a class="main-navigation__list-item-link" href="#"><?= $category?></a>
-                <span class="main-navigation__list-item-count"><?= htmlspecialchars(count_task_categories($category, $tasks)); ?></span>
+                <span
+                    class="main-navigation__list-item-count"><?= htmlspecialchars(count_task_categories($category, $tasks)); ?></span>
             </li>
             <?php endforeach; ?>
         </ul>
