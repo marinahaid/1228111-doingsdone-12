@@ -53,10 +53,10 @@
             <td class="task__file">
                 <a class="download-link" href="#">Home.psd</a>
             </td>
-            <td class="task__date"><?= $task['date'] ?></td>
+            <td class="task__date"><?= $days_count ? 'task--important' : $task['date'] ?></td>
         </tr>
         <?php elseif ($task['is_complete'] && !$show_complete_tasks) : ?>
-        <tr class="tasks__item task task--completed">
+            <tr class="tasks__item task task--completed">
             <td class="task__select">
                 <label class="checkbox task__checkbox">
                     <input class="checkbox__input visually-hidden" type="checkbox">
