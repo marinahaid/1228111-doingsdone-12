@@ -53,7 +53,7 @@
             <td class="task__file">
                 <a class="download-link" href="#">Home.psd</a>
             </td>
-            <td class="task__date"><?= $days_count ? 'task--important' : $task['date'] ?></td>
+            <td class="task__date task--important"> <?= ($new_date  <= 86400) ? 'task--important' : $middle ?></td>
         </tr>
         <?php elseif ($task['is_complete'] && !$show_complete_tasks) : ?>
             <tr class="tasks__item task task--completed">
