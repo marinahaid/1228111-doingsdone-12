@@ -44,7 +44,7 @@
             <td class="task__select">
                 <label class="checkbox task__checkbox">
                     <input
-                        class="checkbox__input visually-hidden task__checkbox <?= ($show_completed_tasks) ? ' checked' : '' ?>"
+                        class="checkbox__input visually-hidden task__checkbox"
                         type="checkbox" value="0">
 
                     <span class="checkbox__text"><?= $task['title'] ?></span>
@@ -53,13 +53,13 @@
             <td class="task__file">
                 <a class="download-link" href="#">Home.psd</a>
             </td>
-            <td class="task__date"><?= $days_count ? 'task--important' : $task['date'] ?></td>
+            <td class="task__date <?=  is_task_important($task['date']) ? 'task--important' : '' ?>"><?= $task['date'] ?></td>
         </tr>
         <?php elseif ($task['is_complete'] && !$show_complete_tasks) : ?>
             <tr class="tasks__item task task--completed">
             <td class="task__select">
                 <label class="checkbox task__checkbox">
-                    <input class="checkbox__input visually-hidden" type="checkbox">
+                    <input class="checkbox__input visually-hidden" type="checkbox" checked>
                     <span class="checkbox__text"><?= htmlspecialchars($task['title']) ?></span>
                 </label>
             </td>
