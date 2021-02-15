@@ -12,4 +12,3 @@ $content_main = include_template('main.php', [
   $layout = include_template('layout.php', [
     'title' => "Дела в порядке", 'content' => $content_main]);
     echo $layout; 
-?>
