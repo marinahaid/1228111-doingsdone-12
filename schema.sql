@@ -21,7 +21,7 @@ FOREIGN KEY (id_task) REFERENCES categories (id_user),
 CREATE TABLE users (
 id_user int (10) AUTO_INCREMENT,
 email varchar(50) NOT NULL,
-password varchar(15) NOT NULL,
+password char(60) NOT NULL,
 name varchar(20) NOT NULL,
 PRIMARY KEY (id_user)
 );
