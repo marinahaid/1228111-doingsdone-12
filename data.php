@@ -10,7 +10,7 @@ $categories = [
 $tasks = [
     [
         'title' => 'Собеседование в IT компании',
-        'date' => '10.02.2021',
+        'date' => '12.02.2021',
         'category' => $categories['work'],
         'is_complete' => false
     ],
