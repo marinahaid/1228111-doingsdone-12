@@ -2,15 +2,18 @@ INSERT users (email, password, name) VALUES('alex123@gmail', 'Abwgd', 'Alex');
 INSERT users (email, password, name) VALUES('maria123@gmail', 'aBwgd', 'Maria');
 INSERT users (email, password, name) VALUES('mikki123@gmail', 'abWgd', 'Mikki');
 
-INSERT categories (category) VALUES('Входящие');
-INSERT categories (category) VALUES('Учеба');
-INSERT categories (category) VALUES('Работа');
-INSERT categories (category) VALUES('Домашние дела');
-INSERT categories (category) VALUES('Авто');
+INSERT categories (name) VALUES('Входящие');
+INSERT categories (name) VALUES('Учеба');
+INSERT categories (name) VALUES('Работа');
+INSERT categories (name) VALUES('Домашние дела');
+INSERT categories (name) VALUES('Авто');
 
-INSERT tasks (date_added, status_task, task_file, date_end) VALUES('10.02.2021', 'Невыполненые', 'img/photo', '26.12.2021');
-INSERT tasks (date_added, status_task, file_task, date_end) VALUES('10.02.2021', 'Невыполненые', 'img/photo', '25.12.2021');
-INSERT tasks (date_added, status_task, file_task, date_end) VALUES('08.02.2021', 'Выполненые', 'img/photo', '12.12.2021');
-INSERT tasks (date_added, status_task, file_task, date_end) VALUES('10.02.2021', 'Невыполненые', 'img', '27.12.2021');
+INSERT tasks (putdate, status, file, deadline) VALUES('10.02.2021', 'Невыполненые', 'img', '26.12.2021');
+INSERT tasks (putdate, status, file, deadline) VALUES('10.02.2021', 'Невыполненые', 'img', '25.12.2021');
+INSERT tasks (dputate, status, file, deadline) VALUES('08.02.2021', 'Выполненые', 'img', '12.12.2021');
+INSERT tasks (putdate, status, file, deadline) VALUES('10.02.2021', 'Невыполненые', 'img', '27.12.2021');
 
-SELECT * FROM categories с JOIN users u ON c.id = u.id;
+SELECT id, name FROM categories WHERE users_id = 1;
+SELECT date, status, deadline FROM tasks WHERE category_id = 1;
+SELECT * FROM tasks WHERE status = 1;
+UPDATE tasks SET id = DEFAULT;
