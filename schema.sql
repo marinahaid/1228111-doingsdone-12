@@ -13,13 +13,15 @@ CREATE TABLE users (
 
 CREATE TABLE categories (
   id int (10) AUTO_INCREMENT PRIMARY KEY,
-  name varchar(100) NOT NULL
+  name varchar(100) NOT NULL,
+  users_id int (10) NOT NULL
 );
 
 CREATE TABLE tasks (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  putdate TIMESTAMP NOT NULL,
+  put DATETIME NOT NULL,
   status BOOLEAN NOT NULL,
   file CHAR(64) NOT NULL,
-  deadline TIMESTAMP NOT NULL
+  deadline DATE NOT NULL,
+  category_id int (10) NOT NULL
 );
