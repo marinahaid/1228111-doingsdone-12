@@ -17,24 +17,34 @@ if (!$con) {
     die("Connection failed:" . mysqli_connect_error());
 }
 
-
+/**
+ * @param function select_categories -функция получение категорий из бд 
+ * @param var $query_categories string - переменная получение name и id по users_id из таблицы с проектами
+ * @param var  $res string- получение данных из бд
+ * @param var  $tasks string - преобразование данных в массив
+ * @param возврат результата преобразованногов массив
+ */
 
 function select_categories()
 {
-    $query = "SELECT name, id FROM categories WHERE users_id = 1"; //Отправьте SQL-запрос для получения списка проектов у текущего пользователя
-    $res = mysqli_query($con, $query);
-    $row = mysqli_fetch_all($res, MYSQLI_ASSOC);
-    return ($row);
+    $query_categories = "SELECT name, id FROM categories WHERE users_id = 1";
+    $res = mysqli_query($con, $query_categories); //переменная $con невидима. Как ее передать, чтобы она была видна в теле функции?
+    $categories = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    return ($categories);
 }
-$row->$categories;
 
 
-
-function select_tasks($categories_id)
+/**
+ * @param function select_tasks -функция получение задач для одной категории из бд 
+ * @param var $query_tasks string - переменная данных по category_id из таблицы с задачами
+ * @param var  $res string- получение данных из бд
+ * @param var  $tasks string - преобразование данных в массив
+ * @param возврат результата преобразованногов массив
+ */
+function select_tasks($categories_id) // categories_id параметр как мы используем? Почему мы тогда не используем параметр для функции select_categories?
 {
-    $query = "SELECT put_date, status, deadline FROM tasks WHERE category_id = 1;"; //Отправьте SQL-запрос для получения списка из всех задач у текущего пользователя.
-    $res = mysqli_query($con, $query);
-    $rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
-    $rows->tasks;
+    $query_tasks = "SELECT put_date, status, deadline FROM tasks WHERE category_id = 1;";
+    $res = mysqli_query($con, $query_tasks);
+    $tasks = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    return ($tasks);
 }
-select_tasks();
