@@ -7,7 +7,7 @@ require_once('database.php');
 $show_complete_tasks = rand(0, 1);
 $content_main = include_template('main.php', [
   'categories' => $categories,
-  'tasks' => $all_tasks,
+  'tasks' => $tasks,
   'show_complete_tasks' => $show_complete_tasks,
 ]);
 
@@ -17,10 +17,10 @@ $layout = include_template('layout.php', [
 echo $layout;
 
 
-$categories = select_categories();
+$categories = select_categories($con, $categories);
 foreach ($categories as $category) {
   $all_tasks[] = [
-    'name' => $category['name'], //окуда мы взяли 'name'?
-    'tasks' => select_tasks($category['id']) //окуда мы взяли 'tasks'? 
+    'name' => $category['name'],
+    'tasks' => select_tasks($con, $category['id']) 
   ];
 }
