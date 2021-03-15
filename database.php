@@ -18,9 +18,9 @@ if (!$con) {
  * @param возврат результата преобразованного массива
  */
 
-function select_categories($con)
+function select_categories($con, $users_id)
 {
-    $query_categories = "SELECT name, id FROM categories WHERE users_id";
+    $query_categories = "SELECT name, id FROM categories WHERE users_id = $users_id";;
     $res = mysqli_query($con, $query_categories);
     $categories = mysqli_fetch_all($res, MYSQLI_ASSOC);
     return ($categories);

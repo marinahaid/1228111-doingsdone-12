@@ -17,10 +17,13 @@ $layout = include_template('layout.php', [
 echo $layout;
 
 
-$categories = select_categories($con, $categories);
+$categories = select_categories($con, $users_id);
+$all_tasks = [];
 foreach ($categories as $category) {
-  $all_tasks[] = [
+  $all_tasks = [
     'name' => $category['name'],
     'tasks' => select_tasks($con, $category['id']) 
   ];
 }
+
+var_dump($all_tasks);
